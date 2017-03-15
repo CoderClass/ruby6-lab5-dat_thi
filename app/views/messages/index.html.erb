@@ -1,2 +1,16 @@
 <h1>Show messages</h1>
-<%= render @messages %>
+
+<%= form_for Message.new do |f| %>
+	<% f.text_field :body %>
+<% end %>
+
+<form id="js-socket">
+  <label>
+    <input type="text" placeholder="Type something..." />
+    WebSocket Style
+  </label>
+</form>
+
+<div class="messages">
+  <%= render @messages %>
+</div>
